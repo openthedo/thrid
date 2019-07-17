@@ -1,0 +1,8 @@
+com\lx\service\impl\AreaServiceImp.class
+com\lx\utils\JedisClient.class
+com\lx\service\AreaService.class
+com\lx\utils\JedisClientPool.class
+com\lx\controller\AreaController.class
+com\lx\entry\Area.class
+com\lx\utils\JsonUtils.class
+com\lx\dao\AreaMapper.class

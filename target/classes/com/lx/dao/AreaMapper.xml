@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.dao.AreaMapper">
+
+    <resultMap id="BaseResultMap" type="area" >
+        <id column="id" property="id"  />
+        <result column="code" property="code"  />
+        <result column="right" property="right"  />
+        <result column="left" property="left"  />
+        <result column="name" property="name"  />
+        <result column="parent_id" property="parentId"  />
+        <result column="level" property="level"  />
+        <result column="created_at" property="createdAt"  />
+        <result column="updated_at" property="updatedAt"  />
+    </resultMap>
+
+    <select id="selectAllArea" resultMap="BaseResultMap">
+        select * from area where level = 1
+    </select>
+
+    <select id="getCityById" resultMap="BaseResultMap" parameterType="int">
+        select * from area where parent_id = #{id} and level = 2
+    </select>
+
+    <select id="getCountry" resultMap="BaseResultMap" parameterType="int">
+        select * from area where parent_id = #{id} and level = 3
+    </select>
+</mapper>
